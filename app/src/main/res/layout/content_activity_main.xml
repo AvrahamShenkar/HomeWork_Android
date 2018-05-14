@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical"
+    tools:context="com.example.avraham.homeWork.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <LinearLayout
+        android:id="@+id/btns_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_resultLayout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/line_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_calc"
+                style="@style/AppTheme"
+                android:layout_width="358dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_red_dark"
+                android:text="Calculator"
+                android:onClick="OpenCalculator"
+                android:textSize="40sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_birthDates"
+                style="@style/AppTheme"
+                android:layout_width="358dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_red_light"
+                android:text="Birth Dates"
+                android:onClick="OpenBirthDates"
+                android:textSize="40sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

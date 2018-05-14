@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    android:padding="5dp"
+    tools:context="com.example.avraham.homeWork.CalculatorActivity">
+
+    <include layout="@layout/content_activity_birth_dates" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_addItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="30dp"
+        android:background="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteY="467dp" />
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+

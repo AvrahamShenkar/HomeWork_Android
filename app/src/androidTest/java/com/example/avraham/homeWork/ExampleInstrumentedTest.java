@@ -1,4 +1,4 @@
-package com.example.avraham.calculator;
+package com.example.avraham.homeWork;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.avraham.calculator", appContext.getPackageName());
+        assertEquals("com.example.avraham.homeWork", appContext.getPackageName());
     }
 }
