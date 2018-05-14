@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_bright"
-    android:padding="5dp"
+    android:background="@color/AliceBlue"
+    android:padding="15dp"
     tools:context="com.example.avraham.homeWork.CalculatorActivity">
 
     <include layout="@layout/content_activity_birth_dates" />

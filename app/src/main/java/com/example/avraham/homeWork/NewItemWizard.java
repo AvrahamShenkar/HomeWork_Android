@@ -3,6 +3,8 @@ package com.example.avraham.homeWork;
 import java.util.Calendar;
 import java.util.Date;
 
+import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,7 +14,7 @@ import android.widget.EditText;
 import com.example.avraham.homeWork.BirthDay;
 
 public class NewItemWizard extends AppCompatActivity {
-
+    DBAccess _db;
     EditText _firstName;
     EditText _lastName;
     DatePicker _birthDate;
@@ -23,6 +25,10 @@ public class NewItemWizard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_itam_wizard);
 
+        _db = Room.databaseBuilder(getApplicationContext(), DBAccess.class, "DevDB")
+                .allowMainThreadQueries()
+                .build();
+
         _firstName = (EditText) findViewById(R.id.first_name);
         _lastName = (EditText) findViewById(R.id.sure_name);
         _birthDate = (DatePicker) findViewById(R.id.birth_date);
@@ -30,15 +36,16 @@ public class NewItemWizard extends AppCompatActivity {
 
     }
 
-    private void addItem(View view){
+    public void addItem(View view){
         if(validateFields()){
             //do something
         }
 
-        BirthDay bd = new BirthDay();
-        bd.setName(_firstName.getText() + " " +  _lastName.getText());
-        bd.setVirthDate(getDate());
-        bd.setComment(_desc.getText().toString());
+        BirthDay bd = new BirthDay(_firstName.getText() + " " +  _lastName.getText(), getDate(), 0, _desc.getText().toString());
+
+        _db.iDbAccess().addItem(bd);
+        returnPage();
+
     }
 
     private boolean validateFields(){
@@ -56,4 +63,15 @@ public class NewItemWizard extends AppCompatActivity {
 
         return calendar.getTime();
     }
+
+    private void returnPage(){
+        openIntent(BirthDatesActivity.class);
+    }
+
+    private void openIntent(Class calss){
+        Intent inten = new Intent(this, calss);
+        finish();
+        startActivity(inten);
+    }
+
 }
